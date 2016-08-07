@@ -14,7 +14,6 @@ shinyUI(
                 headerPanel("Body Mass Index Calculator"),
                 sidebarPanel(
                         
-                        helpText( a("Instructions", href="https://juanpaboxu.shinyapps.io/bmi-index/", target="_blank")),
                         
                         textInput(inputId="nickname", label = "Nickname", value="your nickname"),
                         selectInput(inputId = "gender",
@@ -22,7 +21,7 @@ shinyUI(
                                     choices = c("F", "M"),
                                     selected = "F"),
                         numericInput('weight', 'Your Weight (pounds)', 150, min = 0, max = 1000, step = 1),
-                        numericInput('height', 'Your estimate parents height (inches)', 66, min = 12, max = 108, step = 1),
+                        numericInput('height', 'Your Mid parent heights (inches)', 66, min = 12, max = 108, step = 1),
                         submitButton('Calculate')
                         
                         
@@ -35,7 +34,7 @@ shinyUI(
                         verbatimTextOutput("sex"),
                         h4('Your estimate Height is...'),
                         verbatimTextOutput("yourheight"),
-                        h4('Your BMI based on your estimate parents height is...'),
+                        h4('Your BMI based on your estimate height and typed weight is...'),
                         verbatimTextOutput("bmi"),
                         verbatimTextOutput("label"),
                         helpText( a("Click here for more info about BMI", href="http://apps.who.int/bmi/index.jsp?introPage=intro_3.html", target="_blank"))
